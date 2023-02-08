@@ -4,7 +4,7 @@ import { ResponseContext } from "../../Context"
 
 
 
-const Form = ({handleConsole}) => {
+const Form = () => {
 
   const {setResponse} = useContext(ResponseContext)
   const [formError,setFormError] = useState({})
@@ -32,13 +32,9 @@ const Form = ({handleConsole}) => {
         })
     }
 
-    const validate = ()=>{
+    const validate = (userInput)=>{
         let error = {}
         let regex = /^\d+$/;
-        if(userInput.numberOne.length==0) error.numberOne = 'Field is required'
-
-        if(userInput.numberTwo.length==0) error.numberTwo= 'Field is required'
-
         if(!regex.test(userInput.numberOne)) error.numberOne = 'Enter valid number'
         if(!regex.test(userInput.numberTwo)) error.numberTwo = 'Enter valid number'
      
@@ -63,7 +59,7 @@ const Form = ({handleConsole}) => {
                 setResponse(response.data)      
                 e.target.reset() 
 
-                handleConsole(true)        
+                      
             })
             .catch((er)=>{
                 console.log(er)
@@ -83,13 +79,13 @@ const Form = ({handleConsole}) => {
             <form onSubmit={handleSubmit} >
                 <div className="w-10/12  flex justify-center bg-white rounded-lg shadow-xl  gap-5 mx-auto mt-10 p-9">
 
-                    <div className="flex w-3/12 items-end flex-col  gap-7">
+                    <div className="flex w-3/12 items-end flex-col  gap-7 sm:gap-9 sm:mt-4">
                         <label htmlFor="">First Number :</label>
                         <label htmlFor="">Second Number :</label>
                     </div>
 
 
-                    <div className="flex flex-col mt-5 md:mt-0  w-7/12 gap-10 md:gap-2 ">
+                    <div className="flex flex-col mt-5 md:mt-4  w-7/12 sm:gap-3 md:gap-3 ">
 
                         <input className="outline-none md:w-9/12 px-3 py-1  bg-zinc-300 rounded"
                             type="number"
