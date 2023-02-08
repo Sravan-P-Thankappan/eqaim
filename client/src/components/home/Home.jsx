@@ -15,7 +15,7 @@ const Home = () => {
     return (
         <>
             <Navbar />
-            <Form handleConsole={handleConsole} />
+            <Form  handleConsole={handleConsole} />
            {console&& <Output handleConsole={handleConsole} />}
         </>
 
