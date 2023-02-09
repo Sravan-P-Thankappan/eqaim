@@ -4,19 +4,19 @@ import Navbar from "../navbar/Navbar"
 import Output from "../output/output"
 
 const Home = () => {
-     
-    const [console,setConsole] = useState(false)
 
-    const handleConsole = (params)=>{
-            
+    const [console, setConsole] = useState(false)
+
+    const handleConsole = (params) => {
+
         setConsole(params)
     }
 
     return (
         <>
             <Navbar />
-            <Form   />
-           <Output  />
+            <Form />
+            <Output />
         </>
 
     )

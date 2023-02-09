@@ -90,17 +90,17 @@ const Form = () => {
                         <input className="outline-none md:w-9/12 px-3 py-1  bg-zinc-300 rounded"
                             type="number"
                             min="0"
-                            onChange={handleNumberOne}
+                            onChange={handleNumberOne}  
                         />
                         <label className="text-red-600">{formError.numberOne}</label>
                         <input className="outline-none px-3 md:w-9/12 bg-zinc-300 py-1 rounded"
                             type="number"
                             min="0"
-                            onChange={handleNumberTwo}
+                            onChange={handleNumberTwo}   
                         />
                          
                          <label className="text-red-600">{formError.numberTwo}</label>
-
+ 
                         <div className=" flex justify-end  md:w-9/12 ">
 
                             <button className=" px-5 py-2 rounded-md border-2 border-zinc-300" type="submit">Genarate Steps</button>
